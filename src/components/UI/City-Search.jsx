@@ -65,7 +65,7 @@ const CitySearch = () => {
             {/* Dialog Box */}
             {isDialogOpen && (
                 <div
-                    className="fixed inset-0 h-lvh bg-gray-800 bg-opacity-75 flex items-center justify-center z-50"
+                    className="fixed inset-2 h-lvh bg-gray-800 bg-opacity-75 flex items-center  justify-center z-50"
                     onClick={closeDialog}
                 >
                     <div
