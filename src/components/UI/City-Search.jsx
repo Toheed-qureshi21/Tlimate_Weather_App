@@ -5,7 +5,7 @@ import { useLocationSearchQuery } from '../hooks/use-weatherQuery';
 import { OurContext } from '../Context/OurContext';
 import { useNavigate } from "react-router-dom";
 
-const CitySearch = () => {
+const CitySearch = ({setOpenMenu}) => {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [search, setSearch] = useState("");
     const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -22,12 +22,14 @@ const CitySearch = () => {
     const closeDialog = () => {
         setIsDialogOpen(false);
         setSearch("");
+        
     };
 
     const handleSelection = (city) => {
         const [lat, lon, name, country] = city.split("|");
         setIsDialogOpen(false);
         navigate(`/city/${name}?lat=${lat}&lon=${lon}`);
+        setOpenMenu(false)
         setSearch("");
     };
 

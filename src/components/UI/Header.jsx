@@ -54,7 +54,7 @@ const Header = () => {
 
           {/* Search City Button (Visible on large screens) */}
           <div className="hidden sm:block">
-            <CitySearch />
+            <CitySearch setOpenMenu={setOpenMenu}/>
           </div>
           <button
               onClick={handleThemeButton}
@@ -78,7 +78,7 @@ const Header = () => {
         >
           <div id="btn-search" className="flex flex-col gap-6 items-center">
             {/* Search Section (Visible when the menu is opened) */}
-            <CitySearch />
+            <CitySearch setOpenMenu={setOpenMenu}/>
 
             {/* Theme Toggle Button (Visible in the mobile menu) */}
             <button
