@@ -8,16 +8,12 @@ import { useNavigate } from "react-router-dom";
 const CitySearch = () => {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [search, setSearch] = useState("");
-    const [debouncedSearch, setDebouncedSearch] = useState(search);
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const { theme } = useContext(OurContext);
-    const { data: locationData } = useLocationSearchQuery(debouncedSearch);
+    const { data: locationData } = useLocationSearchQuery(search);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const timer = setTimeout(() => setDebouncedSearch(search), 500);
-        return () => clearTimeout(timer); // Cleanup the timeout
-    }, [search]);
+   
 
     const openDialog = () => {
         setIsDialogOpen(true);
@@ -65,11 +61,11 @@ const CitySearch = () => {
             {/* Dialog Box */}
             {isDialogOpen && (
                 <div
-                    className="fixed inset-2 h-lvh bg-gray-800 bg-opacity-75 flex items-center  justify-center z-50"
+                    className={`fixed inset-0 h-lvh bg-gray-800  flex items-start sm:items-center bg-opacity-25 justify-center z-50 ${theme===false?"max-sm:top-[7.5rem]":""}`}
                     onClick={closeDialog}
                 >
                     <div
-                        className={`bg-white rounded-md shadow-lg w-[30rem] transform transition-all duration-300 ease-in-out ${theme === false ? "bg-zinc-950 text-white" : "bg-white text-zinc-950"} max-sm:mx-2`}
+                        className={`bg-white relative max-sm:top-[8rem] rounded-md shadow-lg w-[30rem] transform transition-all duration-300 ease-in-out ${theme === false ? "bg-zinc-950 text-white" : "bg-white text-zinc-950"} max-sm:mx-2`}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="w-full text-center relative ">
