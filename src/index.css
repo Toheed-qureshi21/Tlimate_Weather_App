@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-padding{
+    padding:0 5rem;
+}
+@media(width<430px){
+    .finalResponsive{
+        justify-content: space-between;
+        padding:0.5rem 1rem 0.5rem 1rem ;
+    }
+}
+@media (width<400px){
+
+    .text-small{
+        font-size: smaller;
+    }
+}
+@media (width<340px){
+    .text-small{
+        font-size: small;
+    }
+}
+*{
+    scroll-snap-type: y mandatory;
+}
