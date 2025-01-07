@@ -16,7 +16,7 @@ export const getForcast = async(coordinates)=>{
     }
 }
 export const getCitySearch = async(city) => {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=${import.meta.env.VITE_API_KEY}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=4&appid=${import.meta.env.VITE_API_KEY}`);
     const data = await response.json();
     return data;
 }
