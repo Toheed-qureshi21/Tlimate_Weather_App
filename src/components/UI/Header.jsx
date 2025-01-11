@@ -74,7 +74,7 @@ const Header = () => {
         <div
           className={`${
             openMenu ? "block" : "hidden"
-          } sm:hidden absolute top-full z-50 left-0 right-0 ${theme===false?"bg-zinc-950 text-white":" bg-white backdrop-blur-xl text-black"} p-4 border-b`}
+          } sm:hidden absolute top-full z-50 left-0 right-0 ${theme===false?"bg-zinc-950 text-white":" bg-white backdrop-blur-2xl text-black"} p-4 border-b`}
         >
           <div id="btn-search" className="flex flex-col gap-6 items-center">
             {/* Search Section (Visible when the menu is opened) */}
