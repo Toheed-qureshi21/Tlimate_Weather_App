@@ -35,10 +35,10 @@ const Header = () => {
 
       <nav
         className={`flex justify-between items-center px-4 py-2 ${
-          theme === false ? "text-white" : "bg-white text-black"
+          theme === false ? "text-white" : "text-black"
         }`}
       >
-        {/* Main Navbar Content */}
+
         <div className="flex justify-between w-full items-center gap-4">
           <div id="btn-search" className="flex gap-6 items-center">
             <button
@@ -52,7 +52,6 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Search City Button (Visible on large screens) */}
           <div className="hidden sm:block">
             <CitySearch setOpenMenu={setOpenMenu}/>
           </div>
@@ -70,17 +69,15 @@ const Header = () => {
             </button>
         </div>
 
-        {/* Mobile Menu (Visible when openMenu is true) */}
         <div
           className={`${
             openMenu ? "block" : "hidden"
           } sm:hidden absolute top-full z-50 left-0 right-0 ${theme===false?"bg-zinc-950 text-white":" bg-white backdrop-blur-2xl text-black"} p-4 border-b`}
         >
           <div id="btn-search" className="flex flex-col gap-6 items-center">
-            {/* Search Section (Visible when the menu is opened) */}
+
             <CitySearch setOpenMenu={setOpenMenu}/>
 
-            {/* Theme Toggle Button (Visible in the mobile menu) */}
             <button
               onClick={handleThemeButton}
               className={`transition-transform ease-linear text-2xl ${

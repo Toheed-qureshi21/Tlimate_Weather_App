@@ -90,14 +90,15 @@ const CitySearch = ({setOpenMenu}) => {
 
                         {locationData && locationData.length > 0 && (
                             <ul className='px-2'>
-                                <li className='px-2 pt-4 mb-2 text-gray-500 text-sm'>Suggestions</li>
+                                <li className='px-2 pt-4 mb-2 text-gray-400 text-sm'>Suggestions</li>
                                 {locationData?.map((currLocation, index) => (
                                     <li
                                         tabIndex={0}
                                         value={`${currLocation.lat}|${currLocation.lon}|${currLocation.name}|${currLocation.country}`}
                                         onClick={() => handleSelection(`${currLocation.lat}|${currLocation.lon}|${currLocation.name}|${currLocation.country}`)}
                                         key={index}
-                                        className={`cursor-pointer px-2 py-2 text-small text-lg w-full hover:rounded-lg flex gap-6 items-center ${theme === false ? "hover:bg-zinc-700 hover:text-white" : "hover:bg-slate-200 text-zinc-950"} ${selectedIndex === index ? "bg-zinc-400" : ""}`}
+                                        className={`cursor-pointer rounded-md px-2 py-2 text-small text-lg w-full hover:rounded-lg flex gap-6 items-center ${theme === false ? "hover:bg-zinc-700 hover:text-white" : "hover:bg-slate-200 text-zinc-950"} ${selectedIndex === index ? 
+                                           theme===false ?"bg-zinc-700":"bg-zinc-200" : ""}`}
                                     >
                                         <span>
                                             <CiSearch className='text-xl font-bold' />
