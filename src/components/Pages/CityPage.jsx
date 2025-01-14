@@ -45,7 +45,7 @@ const CityPage = () => {
           (
             <>
               <section className="flex flex-col gap-6 mt-4">
-                <LocationCard data={weatherQuery.data} label={weatherQuery.data.name}/>
+                <LocationCard  data={weatherQuery.data} label={weatherQuery.data.name}/>
               <Chart forecast={forecastQuery.data} />
               </section>
               <section className="grid  w-full xl:grid-cols-2 gap-6 mx-auto ">
